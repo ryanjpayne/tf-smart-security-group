@@ -2,8 +2,10 @@
 This configuration will create a Security group then add rules of four different types:
 CIDR-based ingress rules, SG-based ingress rules, Self-Referencing ingress rules and an egress rule
 
-Attributes of each rule are passed in a list to the following modules:
+The security group itself is created with the following module:
 tf-aws-modules/security-group
+
+Attributes of each rule are passed in a list to the following modules:
 tf-aws-modules/cidr-source-sg-rule
 tf-aws-modules/sg-source-sg-rule
 tf-aws-modules/self-source-sg-rule
@@ -16,7 +18,7 @@ module "my-instance-sg2" {
 
   name         = "my-s2"
   description  = ""
-  environment  = ""
+  environment  = var.environment
 }
 
 # Create an ingress security group rule in which the source is a CIDR range 
