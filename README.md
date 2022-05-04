@@ -31,7 +31,7 @@ The tf-basic-vpc configuration manages the following dependencies:
   
 ## Example foo-sg.tf  
 
-/*
+```
 # Create a security group
 module "my-instance-sg1" {
   source = "../../modules/security-group"
@@ -82,4 +82,4 @@ module "my-sg1-egress-rule" {
     {index=1, cidr=["0.0.0.0/0"], protocol="all", from_port=0, to_port=65535, description="1 - Allow all egress traffic."}
   ]
 }
-*/
+```
